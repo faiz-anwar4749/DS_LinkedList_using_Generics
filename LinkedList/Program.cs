@@ -12,9 +12,9 @@ namespace LinkedList
             list.Add(70);
             list.Display();
             list = new LinkedList();
-            list.Add1(70);
-            list.Add1(30);
-            list.Add1(56);
+            list.Append(70);
+            list.Append(30);
+            list.Append(56);
             list.Display();
         }
     }
