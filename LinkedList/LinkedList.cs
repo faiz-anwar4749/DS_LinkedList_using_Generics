@@ -14,7 +14,7 @@ namespace LinkedList
             else
             {
                 Node temp = head;
-                while(temp.next != null)
+                while (temp.next != null)
                 {
                     temp = temp.next;
                 }
@@ -49,6 +49,39 @@ namespace LinkedList
                 temp = temp.next;
             }
             Console.WriteLine();
+        }
+        internal Node InsertAtParticularPosition(int position, int data)
+        {
+            Node temp = head;
+            if (position < 1)
+                Console.WriteLine("Invalid position");
+            if (position == 1)
+            {
+                var newNode = new Node(data)
+                {
+                    next = this.head
+                };
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data)
+                        {
+                            next = temp.next
+                        };
+                        temp.next = node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position out of range");
+            }
+            return head;
         }
     }
 }
