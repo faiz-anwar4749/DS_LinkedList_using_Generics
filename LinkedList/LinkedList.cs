@@ -22,7 +22,7 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
-        internal void Append(int data)
+        public void Append(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -50,7 +50,7 @@ namespace LinkedList
             }
             Console.WriteLine();
         }
-        internal Node InsertAtParticularPosition(int position, int data)
+        public Node InsertAtParticularPosition(int position, int data)
         {
             Node temp = head;
             if (position < 1)
