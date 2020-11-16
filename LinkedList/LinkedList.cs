@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 namespace LinkedList
 {
-    class LinkedList
+    public class Linked_List
     {
         internal Node head;
-        internal void Add(int data)
+        public void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -103,6 +103,22 @@ namespace LinkedList
             }
             newNode.next = null;
             return head;
+        }
+        public bool Search(int item)
+        {
+            if (head == null)
+                return false;
+            else
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    if (temp.data == item)
+                        return true;
+                    temp = temp.next;
+                }
+                return false;
+            }
         }
     }
 }
