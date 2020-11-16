@@ -90,7 +90,7 @@ namespace LinkedList
             this.head = this.head.next;
             return this.head;
         }
-        internal Node RemoveLastNode()
+        public Node RemoveLastNode(int v)
         {
             if (head == null)
                 return null;
@@ -119,6 +119,26 @@ namespace LinkedList
                 }
                 return false;
             }
+        }
+        public int Size()
+        {
+            int size = 0;
+            Node n = head;
+            if (head == null)
+            {
+                Console.WriteLine($"Linked List is Empty, Size is {size}");
+            }
+            else
+            {
+                size = 1;
+                while (n.next != null)
+                {
+                    n = n.next;
+                    size++;
+                }
+                Console.WriteLine($"Linked List Size is {size}");
+            }
+            return size;
         }
     }
 }
